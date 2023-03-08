@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.body{
+    height: 100vh;
+    background-color:rgb(147, 244, 125) ;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    row-gap: 10px;
+}
+
+.board{
+    width:90vmin;
+    height:80vmin;
+    background: linear-gradient(rgb(221, 239, 131),rgba(228, 228, 66, 0.743));
+    border: 2px solid black;
+    display: grid;
+    grid-template-rows: repeat(18,1fr);
+    grid-template-columns: repeat(18,1fr);
+}
+
+.snake-head{
+    background-color: brown;
+}
+
+.snake-body{
+    background-color: rgb(238, 54, 54);
+}
+
+.food{
+    background-color:blue;
+}
+
+
+.score-show{
+    text-align: center;
+    height: 30px;
+    width: 50px;
+    background-color: antiquewhite;
+}
