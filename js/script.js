@@ -35,6 +35,7 @@ function endGame(){
         alert('GameOver');
         snakeArr=[{x:10,y:10}];
         score=0;
+        speed=4;
 }
 
 function gameEngine(){
