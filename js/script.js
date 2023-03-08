@@ -6,6 +6,8 @@ let snakeArr=[{x:10,y:10}]
 let food={x:5,y:8}
 let score=0;
 let speedfactor=0.1;
+let upper=17;
+let lower=1;
 
 //game functions
 function main(ctime) {//ctime=>current time
@@ -28,18 +30,22 @@ function isCollide(snakeArr){
     return false;
 }
 
-function gameEngine(){
-    //updating the snake
-    if(isCollide(snakeArr)){    //collides with the wall
-        inputDir={x:0,y:0};
+function endGame(){
+    inputDir={x:0,y:0};
         alert('GameOver');
         snakeArr=[{x:10,y:10}];
         score=0;
+}
+
+function gameEngine(){
+    //updating the snake
+    if(isCollide(snakeArr)){    //collides with the wall
+        endGame();
     }
     //eating the food
     if(snakeArr[0].y==food.y && snakeArr[0].x==food.x){
         snakeArr.unshift({x:snakeArr[0].x+inputDir.x,y:snakeArr[0].y+inputDir.y})
-        food={x:Math.round(1+(17-1)*Math.random()),y:Math.round(1+(17-1)*Math.random())}
+        food={x:Math.round(lower+(upper-lower)*Math.random()),y:Math.round(lower+(upper-lower)*Math.random())}
         score+=1;
         speed=speed+speed*speedfactor;
     }
@@ -78,7 +84,7 @@ window.requestAnimationFrame(main);
 
 //game logic
 window.addEventListener('keydown',e=>{
-    inputDir={x:0,y:1} //start the game
+    //inputDir={x:0,y:1} //start the game
     switch(e.key){
         case "ArrowUp":
             inputDir.x=0;
