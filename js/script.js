@@ -11,8 +11,9 @@ let lower=1;
 
 //game functions
 function main(ctime) {//ctime=>current time
-    window.requestAnimationFrame(main);
+    gameframe=window.requestAnimationFrame(main);
     //control the fps
+    console.log(ctime);
     if((ctime-lastPaintTime)/1000< 1/speed){
         return
     }
@@ -36,6 +37,7 @@ function endGame(){
         snakeArr=[{x:10,y:10}];
         score=0;
         speed=4;
+        window.cancelAnimationFrame(gameframe);
 }
 
 function gameEngine(){
@@ -81,7 +83,9 @@ function gameEngine(){
 
 
 //gameloop
-window.requestAnimationFrame(main);
+function startGame(){
+    window.requestAnimationFrame(main);
+}    
 
 //game logic
 window.addEventListener('keydown',e=>{
