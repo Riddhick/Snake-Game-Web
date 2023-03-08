@@ -1,10 +1,11 @@
 //game variables
 let inputDir={x:0,y:0};
-let speed=2;
+let speed=4;
 let lastPaintTime=0;
 let snakeArr=[{x:10,y:10}]
 let food={x:5,y:8}
 let score=0;
+let speedfactor=0.1;
 
 //game functions
 function main(ctime) {//ctime=>current time
@@ -40,6 +41,7 @@ function gameEngine(){
         snakeArr.unshift({x:snakeArr[0].x+inputDir.x,y:snakeArr[0].y+inputDir.y})
         food={x:Math.round(1+(17-1)*Math.random()),y:Math.round(1+(17-1)*Math.random())}
         score+=1;
+        speed=speed+speed*speedfactor;
     }
     //moving the snake
     for(let i=snakeArr.length-2;i>=0;i--){ 
