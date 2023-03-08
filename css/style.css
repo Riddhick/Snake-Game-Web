@@ -36,8 +36,13 @@
 
 
 .score-show{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
     text-align: center;
     height: 30px;
-    width: 50px;
+    width: 80px;
+    justify-content: center;
+    align-items: center;
     background-color: antiquewhite;
 }
