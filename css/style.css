@@ -60,17 +60,32 @@
         grid-template-rows: 1fr 1fr 1fr;
         justify-content: center;
         height: 30%;
-
+        margin: 10px;
     }
     .side{
         width:100%;
-        display:flex;
-        flex-direction:row;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
         justify-content: space-between;
     }
-    .dir{
-        flex-basis: 100%;
-        flex-grow: 1;
-        width: 60px;
+    
+
+    #Up{
+        width: 90px;
+        margin-left:55px;
+        margin-bottom:10px;
+    }
+    #Down{
+        width: 90px;
+        margin-left:55px;
+        margin-top: 10px;
+    }
+    #Left{
+        width: 90px;
+        margin-right: 10px;
+    }
+    #Right{
+        width: 90px;
+        margin-left: 10px;
     }
 }
