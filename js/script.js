@@ -13,7 +13,7 @@ let lower=1;
 function main(ctime) {//ctime=>current time
     gameframe=window.requestAnimationFrame(main);
     //control the fps
-    console.log(ctime);
+    //console.log(ctime);
     if((ctime-lastPaintTime)/1000< 1/speed){
         return
     }
@@ -112,3 +112,23 @@ window.addEventListener('keydown',e=>{
     }
 
 });
+
+Up.addEventListener('touchstart',e=>{
+    inputDir.x=0;
+    inputDir.y=-1;
+})
+
+Down.addEventListener('touchstart',e=>{
+    inputDir.x=0;
+    inputDir.y=1;
+})
+
+Left.addEventListener('touchstart',e=>{
+    inputDir.x=-1;
+    inputDir.y=0;
+})
+
+Right.addEventListener('touchstart',e=>{
+    inputDir.x=1;
+    inputDir.y=0;
+})
