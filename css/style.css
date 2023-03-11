@@ -46,3 +46,31 @@
     align-items: center;
     background-color: antiquewhite;
 }
+
+.touch-buttons{
+    display: none;
+}
+
+
+@media only screen and (min-width:200px) and (max-width:567px){
+    .touch-buttons{
+        width:60%;
+        padding: 10px;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        justify-content: center;
+        height: 30%;
+
+    }
+    .side{
+        width:100%;
+        display:flex;
+        flex-direction:row;
+        justify-content: space-between;
+    }
+    .dir{
+        flex-basis: 100%;
+        flex-grow: 1;
+        width: 60px;
+    }
+}
